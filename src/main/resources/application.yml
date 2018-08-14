@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/mysql_kevin?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driverclassname: com.mysql.jdbc.Driver
+  session:
+    store-type: none
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+    timeout: 0
+
+
+mybatis:
+  typeAliasesPackage: com.hik.demo.dao.pojo
+  mapperLocations: classpath:mapper/*.xml
